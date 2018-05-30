@@ -1,8 +1,51 @@
-<h3> Create a blog</h3>
+ 
+<div  id='positionDiv' >
 
+</div>
 
-<form action="create" method="post">
-<input type="text" name="title">
-<input type="text" name="content">
-Submit: <input type="submit" name="">
+<div class="container">
+
+<form id="createPostForm">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Destination Country</label>
+    <input name="country" id="whatever" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ex: Azerbaijan">
+  </div>
+   <div class="form-group">
+    <label for="exampleFormControlInput1">Trip length</label>
+    <input name="length" id="whatever" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ex: 12 days">
+  </div>
+   <div class="form-group">
+    <label for="exampleFormControlInput1">Foto URL</label>
+    <input  name="url" id="whatever" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Url of the photo">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">How many cities were visited</label>
+    <select  name="cities" class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>5+</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Now it's time to tell about your trip</label>
+    <textarea name="content" maxlength="250" placeholder="Enter up to 250 characters" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+  </div>
+
+  <input class="btn btn-lg btn-info"  type="submit" name="">
 </form>
+
+
+</div>
+
+
+
+
+
+
+<script>
+$("#whatever").val()=userID
+  </script>
