@@ -86,7 +86,7 @@ end
 post "/blogs/create" do
   @blogs = Blog.all
   user= User.find(session[:user_id])
-  blog=Blog.create(title: params[:title], content: params[:content], user_id: user.id)
+  blog=Blog.create(title: params[:title], content: params[:content], user_id: user.id, username: user.id.username)
   redirect "/blogs"
   erb :'blogs/create'
 end

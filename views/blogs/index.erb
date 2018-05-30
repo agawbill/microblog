@@ -1,7 +1,7 @@
-  
- <%= ERB.new(File.read("header.erb"), 0, "-").result(binding) %>
 
-   
+
+
+
 
  <div id="carousel" class="carousel slide"  data-interval="4000" data-ride="carousel">
   <div class="carousel-inner">
@@ -46,8 +46,7 @@
 </script>
  -->
 
-</body>
-</html>
+
 
 <%@blogs.each do |b| %>
 <%=b.title%><br>

@@ -8,6 +8,7 @@ class CreateBlogsTable < ActiveRecord::Migration[5.2]
       t.string :url
       t.string :cities
       t.integer :user_id
+      t.string :username
     # when you have a current user, you have a user_id...
     end
   end
