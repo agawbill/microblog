@@ -1,6 +1,53 @@
-<h3>Blogs</h3>
+  
+ <%= ERB.new(File.read("header.erb"), 0, "-").result(binding) %>
 
-<h3>List of all blogs</h3>
+   
+
+ <div id="carousel" class="carousel slide"  data-interval="4000" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://images.unsplash.com/photo-1511358146320-eb018ab3e22e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d612beb360bdf694c77949d854f3312e&auto=format&fit=crop&w=1050&q=80" alt="First slide">
+        <div class="carousel-caption d-none d-md-block">
+   			<h5>Niagara Falls, Canada</h5>
+    		<p>First 150 characters of the post... <a href="/show/1"> Read more... </a> </p>
+  		</div>
+    </div>
+
+     <div class="carousel-item">
+      <img class="d-block w-100" src="http://cita.com.ua/img/nhotels/5504/big/5505/935788351.jpg" alt="Second slide">
+    	<div class="carousel-caption d-none d-md-block">
+   			<h5>Baku, Azerbaijan</h5>
+    		<p>First 150 characters of the post... <a href="/show/1"> Read more... </a> </p>
+  		</div>
+    </div>
+
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://images.unsplash.com/photo-1520951097942-555bbbf3e88d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67ec72fab3eb00310234eda97f146cc7&auto=format&fit=crop&w=1500&q=80" alt="Second slide">
+    	<div class="carousel-caption d-none d-md-block">
+   			<h5>Ponza, Italy</h5>
+    		<p>First 150 characters of the post... <a href="/show/1"> Read more... </a> </p>
+  		</div>
+    </div>
+
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://images.unsplash.com/photo-1512428197675-daae5d4e1e43?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9c5484a6047197f7a0b1430a6579b7d2&auto=format&fit=crop&w=1053&q=80" alt="Third slide">
+       <div class="carousel-caption d-none d-md-block">
+   			<h5>Utah, United States</h5>
+    		<p>First 150 characters of the post... <a href="/show/1"> Read more... </a> </p>
+  		</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- <script type="text/javascript">
+	$('.carousel').carousel()
+</script>
+ -->
+
+</body>
+</html>
 
 <%@blogs.each do |b| %>
 <%=b.title%><br>
