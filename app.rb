@@ -53,8 +53,8 @@ get "/accounts" do
   erb :'users/accounts'
 end
 
-get "/modify/:id" do
-  @user = User.find(params[:id])
+get "/modify" do
+  @user = User.find(session[:id])
   @blog = Blog.find(params[:id])
 erb :'users/modify'
 end
@@ -86,7 +86,7 @@ end
 post "/blogs/create" do
   @blogs = Blog.all
   user= User.find(session[:user_id])
-  blog=Blog.create(title: params[:title], content: params[:content], user_id: user.id, username: user.id.username)
+  blog=Blog.create(title: params[:title], content: params[:content], user_id: user.id)
   redirect "/blogs"
   erb :'blogs/create'
 end

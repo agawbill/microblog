@@ -1,4 +1,3 @@
- 
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +24,7 @@
   
 	<body>
  <%= ERB.new(File.read("header.erb"), 0, "-").result(binding) %>
+
 
    
 
@@ -78,6 +78,6 @@
 <%@blogs.each do |b| %>
 <%=b.title%><br>
 <%=b.content%><br>
-<%=b.user_id%>
+<%=b.user.username%>
 <hr>
 <%end%>
