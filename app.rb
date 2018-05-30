@@ -57,12 +57,12 @@ end
 
 get "/modify" do
   @user = User.find(session[:id])
-  @blog = Blog.find(params[:id])
+  # @blog = Blog.find(params[:id])
 erb :'users/modify'
 end
 
 
-post "/update/:id" do
+post "/update" do
   @user = User.find(params[:id])
   user=User.update(username: params[:username], password: params[:password])
   redirect "/"
