@@ -1,7 +1,44 @@
-<h3>Sign Up</h3>
+ 
 
-<form class="" action="/signup" method="post">
-<input type="text" name="username">
-<input type="text" name="password">
-<input type="submit" name="">
-</form>
+ 	<style>
+    #LogoutLink {display: none;}
+	</style>
+	
+	
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+ 	 
+	<body>
+
+<div style="margin-bottom: 10%" class="container">
+
+
+
+<div class="container">
+    
+    <form action="/login" method="POST" style="width: 80 %;" class="ui form">
+  <div class="field">
+      <label>First Name</label>
+    <input type="text" name="userData[first]" placeholder="Name">
+      <label>Last Name</label>
+    <input type="text" name="userData[last]" placeholder="Last Name">
+        <label>E-mail</label>
+    <input type="text" name="userData[email]" placeholder="email">
+   
+  </div>
+  <div class="field">
+  <br>
+     <label>User Name</label>
+    <input type="text" name="userData[username]" placeholder="Username">
+     <label>Password</label>
+    <input type="text" name="userData[password]" placeholder="Password">
+    
+ 
+     </div>
+      <button class="ui button" type="submit">Submit</button>
+    </form>
+    
+</div>
+
+
+
+
