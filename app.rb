@@ -2,6 +2,8 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './models'
 
+layout false, only: [:login, :logout]
+
 set :database, 'sqlite3:users.sqlite3'
 # one database with multiple tables
 set :sessions, true
