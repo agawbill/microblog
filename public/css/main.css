@@ -1,0 +1,22 @@
+.nav {position: absolute;
+		top:0;
+		left:0;
+		color: white;
+		float:right;
+		font-size: 20px;
+		z-index: 4} 
+ 
+.authLinks {float: right;
+			margin-right: 12px;
+			color: white;}
+.nav-item {float: right;
+			}
+.nav-item:hover{
+			border: 2px solid white;
+			border-radius: 25px;}
+.nav-link {color: white
+			}
+.form-inline.my-2.my-lg-0 {position: relative; left: 46%}
+#authLinksForm {float: right;}
+#positionDiv {margin-top: 100px;}
+ .carousel-caption {margin-bottom: 150px;}
