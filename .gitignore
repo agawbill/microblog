@@ -1,0 +1,4 @@
+public/.sass-cache/
+public/css/
+.DS_Store
+users.sqlite3

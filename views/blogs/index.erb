@@ -1,0 +1,10 @@
+<h3>Blogs</h3>
+
+<h3>List of all blogs</h3>
+
+<%@blogs.each do |b| %>
+<%=b.title%><br>
+<%=b.content%><br>
+<%=b.user_id%>
+<hr>
+<%end%>
