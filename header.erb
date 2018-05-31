@@ -4,22 +4,22 @@
 
   <title>Travel Blog</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" >  
-  <link rel="stylesheet" type="text/css" href="/css/index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" >
+  <link rel="stylesheet" type="text/css" href="css/index.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Slabo+27px|Source+Sans+Pro:400,700,700i,900" rel="stylesheet">
 
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  
-  
+
+
 
   <script src='https://www.google.com/recaptcha/api.js'></script>
-    
-     
+
+
    </head>
-  
+
   <body>
  <div style="width: 100%" class="nav">
   <li class="nav-item">
@@ -31,13 +31,19 @@
   <li class="nav-item">
     <a class="nav-link" href="#">Create a new Post</a>
   </li>
-  
+
    <div id="authLinksForm" class="form-inline my-2 my-lg-0">
         <div class="form-group">
-           <a class="authLinks" id ="LoginLink" href="/login">Login</a> 
-           <a class="authLinks" id ="SignUpLink" href="/signup">Sign up</a> 
-           <a class="authLinks" id ="LogoutLink" href="/tickets/external">Logout</a> 
+          <%if !session[:user_id]%>
+          <form method="/login" action="post">
+          <a class="authLinks" id ="LoginLink" href="/login">Login</a>
+        </form>
+        <%else%>
+        <form method="/logout" action="post">
+          <a class="authLinks" id ="LogoutLink" href="/login">Logout</a>
+        </form>
+        <%end%>
+           <a class="authLinks" id ="SignUpLink" href="/signup">Sign up</a>
         </div>
     </div>
 </div>
- 

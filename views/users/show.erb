@@ -1,10 +1,17 @@
 <h3><%=@user.username%></h3>
 
+
+
 <%=@user.id%>
 <%=@user.username%>
 
+
+
 <%@user.blogs.each do |b| %>
-  <%=b.title%><br>
+Title:  <%=b.title%><br>
   <%=b.content%><br>
+  <% id= b.user_id %>
+Posted by: <%= User.find(id).username %>
 <hr>
-<%end%>
+<% end %>
+<hr>

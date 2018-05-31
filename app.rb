@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './models'
 
-layout false, only: [:login, :logout]
+
 
 set :database, 'sqlite3:users.sqlite3'
 # one database with multiple tables
@@ -35,8 +35,9 @@ get "/login" do
   erb :'users/login'
 end
 
+
 post "/login" do
-  user=User.where(username: params[:username], password: params[:password]).first
+  user=User.where(username: params[:username]).first
   if user.password == params[:password]
     session[:user_id]=user.id
     redirect "/"
@@ -45,31 +46,46 @@ post "/login" do
 end
 end
 
+post "/logout" do
+  session[:user_id]= nil
+  redirect "/login"
+end
+
 get "/show/:id" do
+  if !session[:user_id]
+		redirect "/login"
+	else
 @user = User.find(params[:id])
 erb :'users/show'
 end
+end
 
 get "/accounts" do
+  if !session[:user_id]
+		redirect "/login"
+	else
   @users = User.all
   erb :'users/accounts'
 end
+end
 
-get "/modify" do
-  @user = User.find(session[:id])
-  # @blog = Blog.find(params[:id])
+get "/modify/:id" do
+  @user = User.find(params[:id])
 erb :'users/modify'
 end
 
 
 post "/update" do
-  @user = User.find(params[:id])
+  @user = User.find(session[:user_id])
   user=User.update(username: params[:username], password: params[:password])
   redirect "/"
 end
-# end
 
-
+post "/destroy/:id" do
+@user = User.find(params[:id])
+user= User.destroy(params[:id])
+redirect "/signup"
+end
 
 
 # BLOG PORTION

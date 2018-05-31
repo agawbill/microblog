@@ -1,12 +1,12 @@
 <h3>Modify account:</h3>
 
-<form method='post' action="/update/">
-	Username: <input type="text" name="username" value="<%= @user.username %>">
-	Password: <input type="text" name="password" value="<%= @user.password %> ">
+<form method='post' action="/update">
+	Username: <input type="text" name="username">
+	Password: <input type="text" name="password">
 	<input type="submit" name="">
 
 </form>
 <hr>
-<!-- <form method='post' action="/destroy/<%= @user.id %>">
-	<button type='submit'>Destroy</button>
-</form> -->
+<form method='post' action="/destroy/<%=@user.id%>">
+	<button type='submit'>Destroy Account?</button>
+</form>
